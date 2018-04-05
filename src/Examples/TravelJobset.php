@@ -1,11 +1,9 @@
 <?php
 namespace Limen\Jobs\Examples;
 
-use Limen\Jobs\Contracts\BaseJobset;
 use Limen\Jobs\Examples\Models\JobsetModel;
-use Limen\Jobs\JobsConst;
 
-class TravelJobset extends BaseJobset
+class TravelJobset extends ExampleJobset
 {
     protected $name = 'travel';
 

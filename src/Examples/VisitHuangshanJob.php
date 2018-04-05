@@ -1,12 +1,10 @@
 <?php
 namespace Limen\Jobs\Examples;
 
-use Limen\Jobs\Contracts\BaseJob;
 use Limen\Jobs\Examples\Models\JobModel;
-use Limen\Jobs\Helper;
 use Limen\Jobs\JobsConst;
 
-class VisitHuangshanJob extends BaseJob
+class VisitHuangshanJob extends ExampleJob
 {
     protected $name = 'visit_Huangshan';
 

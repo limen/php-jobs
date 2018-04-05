@@ -1,11 +1,10 @@
 <?php
 namespace Limen\Jobs\Examples;
 
-use Limen\Jobs\Contracts\BaseJob;
 use Limen\Jobs\Examples\Models\JobModel;
 use Limen\Jobs\JobsConst;
 
-class NoticeOneJob extends BaseJob
+class NoticeOneJob extends ExampleJob
 {
     protected $name = 'notice_one';
 

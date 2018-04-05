@@ -7,7 +7,6 @@
 
 namespace Limen\Jobs\Contracts;
 
-use Limen\Jobs\Examples\Models\JobModel;
 use Limen\Jobs\Helper;
 use Limen\Jobs\JobsConst;
 
@@ -54,18 +53,7 @@ abstract class BaseJob
      * @param $jobsetId
      * @return JobModelInterface
      */
-    public function makeModel($jobsetId)
-    {
-        // dont forget the job id if you need it
-
-        $model = new JobModel();
-        $model->setName($this->name);
-        $model->setJobsetId($jobsetId);
-        $model->setTryAt($this->getFirstTryAt());
-        $model->persist();
-
-        return $model;
-    }
+    abstract protected function makeModel($jobsetId);
 
     /**
      * @param JobModelInterface $model
