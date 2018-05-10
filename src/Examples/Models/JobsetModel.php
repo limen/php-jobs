@@ -67,6 +67,16 @@ class JobsetModel implements JobsetModelInterface
         $this->setField('name', $name);
     }
 
+    public function setAttribute($attr, $value)
+    {
+        $this->setField($attr, $value);
+    }
+
+    public function getAttribute($attr)
+    {
+        return $this->getField($attr);
+    }
+
     public function persist()
     {
         return true;

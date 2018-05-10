@@ -31,14 +31,15 @@ abstract class BaseJobset
     /**
      * Make new jobset
      *
+     * @param array $attributes
      * @return BaseJobset
      */
-    public static function make()
+    public static function make($attributes = [])
     {
         $jobset = new static();
 
         // make jobset model
-        $model = $jobset->makeModel();
+        $model = $jobset->makeModel($attributes);
         // update local model
         $jobset->setModel($model);
         // make job models and init job instances
@@ -72,9 +73,10 @@ abstract class BaseJobset
     }
 
     /**
+     * @param array $attributes
      * @return JobsetModelInterface
      */
-    abstract protected function makeModel();
+    abstract protected function makeModel($attributes = []);
 
     /**
      * @param $id

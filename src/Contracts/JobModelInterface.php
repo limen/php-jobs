@@ -56,6 +56,10 @@ interface JobModelInterface
 
     public function setName($name);
 
+    public function setAttribute($attr, $value);
+
+    public function getAttribute($attr);
+
     /**
      * Make model durable
      *

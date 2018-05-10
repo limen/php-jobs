@@ -29,12 +29,13 @@ abstract class BaseJob
 
     /**
      * @param $jobsetId
+     * @param array $attributes
      * @return static
      */
-    public static function make($jobsetId)
+    public static function make($jobsetId, $attributes = [])
     {
         $job = new static();
-        $model = $job->makeModel($jobsetId);
+        $model = $job->makeModel($jobsetId, $attributes);
         $job->setModel($model);
 
         return $job;
@@ -51,9 +52,10 @@ abstract class BaseJob
 
     /**
      * @param $jobsetId
+     * @param array $attributes
      * @return JobModelInterface
      */
-    abstract protected function makeModel($jobsetId);
+    abstract protected function makeModel($jobsetId, $attributes = []);
 
     /**
      * @param JobModelInterface $model
